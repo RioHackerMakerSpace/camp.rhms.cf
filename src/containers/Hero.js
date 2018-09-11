@@ -1,28 +1,41 @@
 import React from 'react'
+import DayJS from 'dayjs'
 import { withRouteData} from 'react-static'
 
-const NewsShortItem = ({title}) => (
-    <div>
-        <a href="/news/2017-09-18-summer-school-started/">
-            <div className="recent-news info-box right">
+const months = [
+    'Jan', 'Feb', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Out', 'Nov', 'Dic'
+]
 
-                <div className="icon-holder">
+const slice = (s, l = 50) =>
+    s.length < l
+?  s
+: `${s.slice(0, l)}…`
 
-                    <span className="date">18</span>
-                    <span className="month">Sep</span>
+const NewsShortItem = ({data: {title, date}, content}) => {
+    const d = DayJS(date)
+    return (
+        <div>
+            <a href="/news/2017-09-18-summer-school-started/">
+                <div className="recent-news info-box right">
+
+                    <div className="icon-holder">
+
+                        <span className="date">{d.$D}</span>
+                        <span className="month">{months[d.$M]}</span>
+                    </div>
+
+                    <div>
+                        <p><strong>
+                            {title}
+                        </strong></p>
+                        <p><span>{slice(content)}</span><br /></p>
+                    </div>
+
                 </div>
-
-                <div>
-                    <p><strong>
-                        {title}
-                    </strong></p>
-                    <p><span>The Summer School has started!</span><br /></p>
-                </div>
-
-            </div>
-        </a>
-    </div>
-)
+            </a>
+        </div>
+    )
+}
 
 const Hero = withRouteData(({title, subtitle, date, place, posts}) => (
     <div className="container">
@@ -61,7 +74,7 @@ const Hero = withRouteData(({title, subtitle, date, place, posts}) => (
         </div>
 
         <div className="news-list">
-            {posts.map(post => <NewsShortItem {...post} />)}
+            {posts.slice(0, 3).map(post => <NewsShortItem {...post} />)}
             <div className="archive-link">
                 <a href="/archive/">&raquo; News Archive</a>
             </div>
@@ -71,7 +84,6 @@ const Hero = withRouteData(({title, subtitle, date, place, posts}) => (
 
             <a href="https://www.flickr.com/photos/floris-oosterveld/9356064319" target="_blank">Background Image “Würzburg”</a> by <a href="https://www.flickr.com/people/floris-oosterveld/" target="_blank">Floris Oosterveld</a>
             (<a href="https://creativecommons.org/licenses/by/2.0" target="_blank">CC BY 2.0</a>)
-
         </div>
     </div>
 ))

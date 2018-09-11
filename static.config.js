@@ -42,6 +42,7 @@ function getPosts () {
     }
   })
   return getFiles()
+}
 const ical2json = require('ical2json')
 const url = `https://calendar.google.com/calendar/ical/l1rhpqh5tk0dgr8373kchtae5s%40group.calendar.google.com/private-f330c43ef49f9d4bf13d774f55fe5c91/basic.ics`
 
@@ -56,7 +57,6 @@ const parseDate = (date) => {
   return new Date(Date.UTC(year, month, day, hour, minute, second));
 }
 
-export default {
 const getEvents = async () =>  axios(url)
   .then(({data}) => ical2json.convert(data))
   .then(({VCALENDAR}) => VCALENDAR[0].VEVENT)
@@ -67,7 +67,8 @@ const getEvents = async () =>  axios(url)
     start: parseDate(e.DTSTART)
   })).sort((a, b) => a.start - b.start))
 
-  getSiteData: () => ({
+export default {
+  getSiteData: async () => ({
     title: 'React Static with Netlify CMS',
     conf: {
       title: 'HackCamp 2018',

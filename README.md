@@ -4,7 +4,7 @@ React-Static Basic template with added configuration for use with Netlify CMS an
 
 To get started, click below to deploy to Netlify.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/tsgriff/react-static-netlifycms)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/RioHackerSpace/camp.rhms.cf)
 
 Or, copy this folder and signup with [Netlify](https://www.netlify.com), click "New site from Git", select GitHub, and add "yarn build" as the "Build command" and "dist" as the "Publish directory".
 
