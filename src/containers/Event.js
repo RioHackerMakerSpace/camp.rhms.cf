@@ -1,7 +1,14 @@
 import React from 'react'
 
 const Event = ({start, summary, description, location}) => {
-    const d = start.match(/T(\d\d:\d\d)/)[1]
+    let s = start.toString()
+    let d;
+    try {
+        d = s.match(/T(\d\d:\d\d)/)[1]
+    } catch(e) {
+        console.error("FAILED", start, s, d, s.match(/T(\d\d:\d\d)/))
+        d = 'FAILED'
+    }
 
     return (
         <div className="event extend">

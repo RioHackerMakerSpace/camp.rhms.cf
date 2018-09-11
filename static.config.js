@@ -56,7 +56,8 @@ const parseDate = (date) => {
   const minute = date.substr(11, 2);
   const second = date.substr(13, 2);
 
-  return new Date(Date.UTC(year, month, day, hour, minute, second));
+  //return new Date(Date.UTC(year, month, day, hour, minute, second));
+  return `${year}-${month}-${day}T${hour}:${minute}:${second}`
 }
 
 const getEvents = async () =>  axios(url)

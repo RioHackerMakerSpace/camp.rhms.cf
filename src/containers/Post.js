@@ -8,7 +8,6 @@ export default withRouteData(({ post }) => (
       <Link to="/blog/">{'<'} Back</Link>
       <br />
       <h3>{post.data.title}</h3>
-      {post.data.date}
       <img className="image" src={post.data.thumbnail} alt="" />
       <Markdown source={post.content} escapeHtml={false} />
   </div>
