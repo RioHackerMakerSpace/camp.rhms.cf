@@ -21,7 +21,9 @@ function getPosts () {
             // Convert to frontmatter object and markdown content //
             const dataObj = matter(data)
             // Create slug for URL //
-            dataObj.data.slug = dataObj.data.title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
+            const slug = dataObj.data.title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
+            dataObj.data.slug = slug
+            dataObj.key = slug
             // Remove unused key //
             delete dataObj.orig
             // Push object into items array //
@@ -61,6 +63,7 @@ const getEvents = async () =>  axios(url)
   .then(({data}) => ical2json.convert(data))
   .then(({VCALENDAR}) => VCALENDAR[0].VEVENT)
   .then(events => events.map(e => ({
+    key: e.UID,
     summary: e.SUMMARY,
     location: e.LOCATION,
     description: e.DESCRIPTION,
