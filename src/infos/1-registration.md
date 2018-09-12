@@ -2,9 +2,9 @@
 layout: info
 id: registration
 title: 'Chega la !'
-subtitle: 'infomacoes diversas'
 date: 2017-02-19T00:45:43.212Z
 ---
+### infomacoes diversas
 No dia 12 de Outubro comemoramos o dia das crianças.Neste ano de 2018 vamos
 comemorar também compartilhando conhecimentos tecnológicos, falar de
 software livre e movimento maker com a intenção de nos tornarmos cada vez
@@ -26,7 +26,7 @@ O Hack Camp é uma experiência divertida e interativa. Durante o acampamento,
 você poderá aumentar seu conhecimento sobre tecnologias e irá ampliar sua
 rede de contatos.
 
-# O que acontece no Hack Camp?
+### O que acontece no Hack Camp?
 
 Além de muito conhecimento aberto sobre os tópicos acima, vai rolar fogueira, música e diversão.
 A capacidade do evento é para 60 pessoas. Vai ter área de camping, mas quem

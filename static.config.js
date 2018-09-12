@@ -72,33 +72,43 @@ const getEvents = async () =>  axios(url)
     location: e.LOCATION,
     description: e.DESCRIPTION,
     start: parseDate(e.DTSTART)
-  })).sort((a, b) => a.start - b.start))
+  })).sort((a, b) => a.start > b.start ? 1: -1))
+
+const eventsByDay = (events) => events.reduce((acc, cur) => {
+  const day = cur.start.split('T')[0]
+  return {
+    ...acc,
+    [day]: (acc[day] || []).concat(cur)
+  }
+}, {})
 
 export default {
-  getSiteData: async () => ({
-    title: 'React Static with Netlify CMS',
-    social: {
-      twitter: 'RHMS'
-    },
-    conf: {
-      title: 'HackCamp 2018',
-      date: '12 ao 14 de Outoubro 2018',
-      place: {
-        location: 'Jardim 5.0',
-        city: 'Paty Do Alferes',
-        state: 'RJ'
-      }
-    },
-    events: await getEvents(),
-  }),
+  getSiteData: async () => {
+    const events = await getEvents()
+
+    return {
+      title: 'React Static with Netlify CMS',
+      social: {
+        twitter: 'RHMS'
+      },
+      conf: {
+        title: 'HackCamp 2018',
+        date: '12 ao 14 de Outoubro 2018',
+        place: {
+          location: 'Jardim 5.0',
+          city: 'Paty Do Alferes',
+          state: 'RJ'
+        }
+      },
+      events: eventsByDay(events)
+    }
+  },
   getRoutes: async () => {
     const posts = await getMD('./src/posts')
     const infos =  await getMD('./src/infos')
       .then(infos => infos.reduce((acc, cur) => Object.assign({}, acc, {
         [cur.data.id]: cur
       }), {}))
-
-    console.error ('LOGO', posts, infos)
     return [
       {
         path: '/',

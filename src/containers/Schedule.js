@@ -1,37 +1,41 @@
 import React from 'react'
 
 import Event from './Event'
+import './tabs.css'
 
-const Schedule = ({events}) => (
-    <div className="schedule section">
-        <div className="container">
+const Schedule = ({events}) => {
+    const days = Object.keys(events)
 
-            <h2>Conference Schedule</h2>
+    return (
+        <div className="schedule section">
+            <div className="container">
 
-            <p className="text"><a href="/data/Declare17_Schedule.pdf" target="_blank">&raquo; Download Schedule as PDF</a>
-            </p>
+                <h2>Conference Schedule</h2>
 
-            <div className="tabs">
+                <p className="text"><a href="/data/Declare17_Schedule.pdf" target="_blank">&raquo; Download Schedule as PDF </a>
+                </p>
 
-                <ul>
-                    <li><a href="#tabs-1">Tue, 19th</a></li>
-                    <li><a href="#tabs-2">Wed, 20th</a></li>
-                    <li><a href="#tabs-3">Thu, 21st</a></li>
-                    <li><a href="#tabs-4">Fri, 22nd</a></li>
-                </ul>
-                
-                <div id="tabs-1" className="day">
-                    <div className="name"><span>Tue, 19th</span></div>
-
-                    <div className="events">
-                        {events.map(e => <Event {...e}/>)}
-                    </div>
-
+                <div className="pc-tab">
+                    {days.map((day, i) =>  <input key={day} id={`tab${i}`} type="radio" name="pct" /> )}
+                    <nav>
+                        <ul>
+                            {days.map((day, i) => <li key={day} className={`tab tab${i}`}>
+                                <label for={`tab${i}`}>{day}</label>
+                            </li>
+                            )}
+                        </ul>
+                    </nav>
+                    <section>
+                        {days.map((day, i) => <div key={day} className={`tab tab${i}`}>
+                            { events[day]
+                                .map(e => <Event {...e}/>)}
+                        </div>
+                        )}
+                    </section>
                 </div>
             </div>
-
         </div>
-    </div>
-)
+    )
+}
 
 export default Schedule
