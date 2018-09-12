@@ -1,4 +1,5 @@
 import React from 'react'
+import Markdown from 'react-markdown'
 
 const Event = ({start, summary, description, location}) => {
     let s = start.toString()
@@ -20,7 +21,7 @@ const Event = ({start, summary, description, location}) => {
                         {location}
                     </strong></p>
 
-                    <p>{description}</p>
+                    <Markdown source={description}/>
                     <p className="speaker permanent"> <a href="/data/slides/tompits.pdf" target="_blank">» Slides</a> </p>
                 </div>
             </div>

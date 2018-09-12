@@ -1133,49 +1133,6 @@ a:hover {
     text-decoration: none
 }
 
-.ui-tabs {
-    padding: 0
-}
-
-.ui-tabs .ui-tabs-nav {
-    padding: 0 !important;
-    margin-bottom: 10px
-}
-
-.ui-tabs .ui-tabs-nav li,
-.ui-tabs .ui-tabs-nav li.ui-tabs-active {
-    padding: 0;
-    margin: 0
-}
-
-.ui-tabs .ui-tabs-nav li {
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out
-}
-
-.ui-tabs .ui-tabs-nav li .ui-tabs-anchor {
-    text-align: center;
-    padding: 0.5em 0
-}
-
-.ui-tabs .ui-tabs-nav li.ui-state-active,
-.ui-tabs .ui-tabs-nav li.ui-state-active.ui-state-hover {
-    background-color: #9c001a;
-    color: #fff
-}
-
-.ui-tabs .ui-tabs-nav li.ui-state-active a,
-.ui-tabs .ui-tabs-nav li.ui-state-active.ui-state-hover a {
-    color: #fff
-}
-
-.ui-tabs .ui-tabs-nav li.ui-state-hover {
-    background-color: #ff6982;
-    color: #fff
-}
-
 @media screen {
     .organisation {
         padding-bottom: 30px

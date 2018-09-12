@@ -17,7 +17,7 @@ export default withSiteData(({conf, events, social}) => (
       <Intro/>
       <Schedule events={events}/>
       <Registration/>
-      <Location />
+      <Location {...conf}/>
       <Social {...social}/>
       <Footer/>
   </div>

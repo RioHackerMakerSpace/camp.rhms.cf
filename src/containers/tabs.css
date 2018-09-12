@@ -1,5 +1,4 @@
 /* Component Needs */
-
 .pc-tab > input,
 .pc-tab section > div {
     display: none;
@@ -20,18 +19,10 @@
 }
 
 /* Visual Styles */
-
-$activeColor: #ffffff;
-$unactiveColor: #eeeeee;
-$unactiveHoverColor: #dddddd;
-
-@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700);
-@import url(https://fonts.googleapis.com/css?family=Raleway:100,400,700);
-
 *, *:after, *:before {
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box; 
-   box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -47,73 +38,72 @@ h1 {
     color: #e74c3c;
 }
 
-.pc-tab { 
+.pc-tab {
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        li {
-            label {
-                font-family: "Raleway";
-                float: left;
-                padding: 15px 25px;
-                border: 1px solid #ddd;
-                border-bottom: 0;
-                background: $unactiveColor;
-                color: #444;
-                &:hover {
-                    background: $unactiveHoverColor;
-                }
-                &:active {
-                    background: $activeColor;
-                }
-            }
-            &:not(:last-child) label {
-                border-right-width: 0; 
-            }
-        }
-    }
-    section {
-        font-family: "Droid Serif";
-        clear: both;
-        div {
-            padding: 20px; 
-            width: 100%;
-            border: 1px solid #ddd;
-            background: #fff;
-            line-height: 1.5em;
-            letter-spacing: 0.3px;
-            color: #444;
-            h2 {
-                margin: 0;
-                font-family: "Raleway";
-                letter-spacing: 1px;
-                color: #34495e;
-            }
-        }
-    }
+}
+.pc-tab ul {
+    list-style: none;
+    margin: 0!important;
+    padding: 0!important;
+    border: 0!important;
+}
+.pc-tab ul li label {
+    float: left;
+    padding: 25px;
+    border-bottom: 0;
+    background: #eeeeee;
+    color: #444;
+}
+.pc-tab ul li label:hover {
+    background-color: #ff6982;
+    color: #fff;
+}
+.pc-tab ul li label:active {
+    background-color: #9c001a;
+    color: #fff
+}
+.pc-tab ul li:not(:last-child) label {
+    border-right-width: 0;
+}
+.pc-tab section {
+    font-family: "Droid Serif";
+    clear: both;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid #ddd;
+    background: #fff;
+    line-height: 1.5em;
+    letter-spacing: 0.3px;
+    color: #444;
+}
+.pc-tab section div h2 {
+    margin: 0;
+    font-family: "Raleway";
+    letter-spacing: 1px;
+    color: #34495e;
 }
 
-#tab0:checked ~ nav .tab0,
-#tab1:checked ~ nav .tab1,
-#tab2:checked ~ nav .tab2,
-#tab3:checked ~ nav .tab3 {
-    label {
-        background: white;
-        color: #111;
-        position: relative;
-        &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            height: 2px;
-            width: 100%;
-            background: $activeColor;
-            left: 0;
-            bottom: -1px;
-        }
-    }
+#tab0:checked ~ nav .tab0 label,
+#tab1:checked ~ nav .tab1 label,
+#tab2:checked ~ nav .tab2 label,
+#tab3:checked ~ nav .tab3 label {
+    background-color: #9c001a;
+    color: #fff;
+    position: relative;
 }
+#tab0:checked ~ nav .tab0 label:after,
+#tab1:checked ~ nav .tab1 label:after,
+#tab2:checked ~ nav .tab2 label:after,
+#tab3:checked ~ nav .tab3 label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #ffffff;
+    left: 0;
+    bottom: -1px;
+}
+

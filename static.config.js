@@ -70,7 +70,7 @@ const getEvents = async () =>  axios(url)
     key: e.UID,
     summary: e.SUMMARY,
     location: e.LOCATION,
-    description: e.DESCRIPTION,
+    description: e.DESCRIPTION.replace('\\n',''),
     start: parseDate(e.DTSTART)
   })).sort((a, b) => a.start > b.start ? 1: -1))
 
@@ -97,7 +97,10 @@ export default {
         place: {
           location: 'Jardim 5.0',
           city: 'Paty Do Alferes',
-          state: 'RJ'
+          state: 'RJ',
+          country: 'Brasil',
+          description: 'Paty do Alferes é um município no interior do estado do Rio de Janeiro. Ocupa uma área de 319,103 km². Seus habitantes são denominados como patienses, sendo um dos importantes centros culturais do estado.'
+
         }
       },
       events: eventsByDay(events)
@@ -139,9 +142,9 @@ export default {
       {
         is404: true,
         component: 'src/containers/404',
-      },
-    ]
   },
+]
+},
   renderToHtml: (render, Comp, meta) => {
     const sheet = new ServerStyleSheet()
     const html = render(sheet.collectStyles(<Comp />))

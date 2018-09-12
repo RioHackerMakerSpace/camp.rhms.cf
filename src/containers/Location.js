@@ -1,25 +1,22 @@
 import React from 'react'
 
-const Location = () => (
+const Location = ({place}) => (
     <div className="location section imgover">
         <div className="container">
 
             <h2>Location and Venue</h2>
-            <p className="subtitle">Universität Würzburg &ndash; Franconia &ndash; Bavaria &ndash; Germany</p>
-
+            <p className="subtitle">{place.location} &ndash; {place.city} &ndash; {place.state} &ndash; {place.country}</p>
 
             <div className="info">
 
                 <div className="maps">
-
                     <div className="images">
-                        <img src="images/uniwue-z6.jpg" />
+                        <img src={place.image} />
                     </div>
                 </div>
 
                 <div className="address">
-
-                    <h4>Würzburg is located about equidistant from Frankfurt and Nuremberg in the center of Germany. The city of 125.000 inhabitants is best known for the Residence Palace and Franconian Wine.</h4>
+                    <h4>{place.description}</h4>
 
                     <h5><i className="fa fa-chevron-right"></i> Venue</h5>
 

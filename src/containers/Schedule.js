@@ -16,7 +16,8 @@ const Schedule = ({events}) => {
                 </p>
 
                 <div className="pc-tab">
-                    {days.map((day, i) =>  <input key={day} id={`tab${i}`} type="radio" name="pct" /> )}
+                    {days.map((day, i) =>
+                        <input key={day} id={`tab${i}`} type="radio" name="pct" defaultChecked={i === 0}/> )}
                     <nav>
                         <ul>
                             {days.map((day, i) => <li key={day} className={`tab tab${i}`}>
