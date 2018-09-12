@@ -3,7 +3,10 @@ import { withSiteData } from 'react-static'
 
 import Hero from './Hero'
 import Intro from './Intro'
+import Registration from './Registration'
 import Schedule from './Schedule'
+import Social from './Social'
+import Footer from './Footer'
 
 import './style.css'
 
@@ -13,41 +16,16 @@ export default withSiteData(({conf, events}) => (
           <Hero {...conf}/>
       </div>
       <Intro/>
-      <a id="events" className="anchor"></a>
-      <a id="schedule" className="anchor"></a>
-
       <Schedule events={events}/>
+      <Registration/>
 
-      <a id="registration" className="anchor"></a>
-      <div className="registration section">
-          <div className="container">
-
-              <h2>Registration</h2>
-
-              <div className="row">
-                  <div className="form">
-                      <h3>Process</h3>
-
-                      <p>To start the registration process, please fill the <a href="/registration/">form on our registration page</a>. You will automatically get a confirmation mail that we received your data. This confirmation mail also includes a copy of your entered data.</p>
-                  </div>
-                  <div className="form">
-                      <h3>&nbsp;</h3>
-                      <p>We will send you instructions for bank transfer via mail. This may take up to three days. Once we receive the money, your registration is completed. You will get a written receipt at the conference.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-      <a id="location" className="anchor"></a>
-
-      
       <div className="location section imgover">
           <div className="container">
 
               <h2>Location and Venue</h2>
               <p className="subtitle">Universität Würzburg &ndash; Franconia &ndash; Bavaria &ndash; Germany</p>
 
-              
+
               <div className="info">
 
                   <div className="maps">
@@ -98,7 +76,7 @@ export default withSiteData(({conf, events}) => (
                   </div>
 
               </div>
-              
+
 
               <div className="image-attribution">
                   <a href="https://www.flickr.com/photos/floris-oosterveld/9356064319" target="_blank">Background Image “An der Uni”</a> by <a href="https://www.flickr.com/photos/martinroell/" target="_blank">Martina Roell</a> (
@@ -106,33 +84,9 @@ export default withSiteData(({conf, events}) => (
               </div>
           </div>
       </div>
-      
 
-      
-      <div className="social section">
-          <div className="container">
-              <div>
-                  <h2>Keep me informed</h2>
-                  <p className="subtitle">Follow us on Twitter</p>
-
-                  <a href="https://twitter.com/Declare_Conf" target="_blank"><i className="fa fa-twitter"></i></a>
-              </div>
-          </div>
-      </div>
-
-
-      <div className="footer">
-
-
-          <div className="container">
-              <div className="bmbf">
-                  <img src="/images/BMBF_RGB_Gef_M.jpg" alt="Logo BMBF" />
-                  <p>
-                      Dieses Vorhaben wird aus Mitteln des Bundesministeriums für Bildung und Forschung unter dem Förderkennzeichen 01PL16019 gefördert. Die Verantwortung für den Inhalt dieser Veröffentlichung liegt beim Autor.
-                  </p>
-              </div>
-          </div>
-      </div>
+      <Social/>
+      <Footer/>
 
   </div>
 ))

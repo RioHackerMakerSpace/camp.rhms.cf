@@ -6,13 +6,13 @@ import axios from 'axios'
 import React, { Component } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
-function getPosts () {
+const getMD = (filePath) => {
   const items = []
   // Walk ("klaw") through posts directory and push file paths into items array //
-  const getFiles = () => new Promise(resolve => {
+  const getFiles = (filePath) => new Promise(resolve => {
     // Check if posts directory exists //
-    if (fs.existsSync('./src/posts')) {
-      klaw('./src/posts')
+    if (fs.existsSync(filePath)) {
+      klaw(filePath)
         .on('data', item => {
           // Filter function to retrieve .md files //
           if (path.extname(item.path) === '.md') {
@@ -43,8 +43,11 @@ function getPosts () {
       resolve(items)
     }
   })
-  return getFiles()
+  return getFiles(filePath)
 }
+
+const getPosts = () => getMD('./src/posts')
+
 const ical2json = require('ical2json')
 const url = `https://calendar.google.com/calendar/ical/l1rhpqh5tk0dgr8373kchtae5s%40group.calendar.google.com/private-f330c43ef49f9d4bf13d774f55fe5c91/basic.ics`
 
@@ -74,6 +77,9 @@ const getEvents = async () =>  axios(url)
 export default {
   getSiteData: async () => ({
     title: 'React Static with Netlify CMS',
+    social: {
+      twitter: 'RHMS'
+    }
     conf: {
       title: 'HackCamp 2018',
       date: '12 ao 14 de Outoubro 2018',
@@ -83,16 +89,23 @@ export default {
         state: 'RJ'
       }
     },
-    events: await getEvents()
+    events: await getEvents(),
   }),
   getRoutes: async () => {
-    const posts = await getPosts()
+    const posts = await getMD('./src/posts')
+    const infos =  await getMD('./src/infos')
+      .then(infos => infos.reduce((acc, cur) => Object.assign({}, acc, {
+        [cur.data.id]: cur
+      }), {}))
+
+    console.error ('LOGO', posts, infos)
     return [
       {
         path: '/',
         component: 'src/containers/Home',
         getData: () => ({
           posts,
+          infos
         })
       },
       {
