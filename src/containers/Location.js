@@ -1,24 +1,25 @@
 import React from 'react'
+import Attribution from './Attribution'
 
-const Location = ({place}) => (
+const Location = ({place: {image, location, city, state, country, description}}) => (
     <div className="location section imgover" style={{
-        backgroundImage: `url(${place.image})`
+        backgroundImage: `url(${image.url})`
     }}>
         <div className="container">
 
             <h2>Location and Venue</h2>
-            <p className="subtitle">{place.location} &ndash; {place.city} &ndash; {place.state} &ndash; {place.country}</p>
+            <p className="subtitle">{location} &ndash; {city} &ndash; {state} &ndash; {country}</p>
 
             <div className="info">
 
                 <div className="maps">
                     <div className="images">
-                        <img src={place.image} />
+                        <img src={image.url} />
                     </div>
                 </div>
 
                 <div className="address">
-                    <h4>{place.description}</h4>
+                    <h4>{description}</h4>
 
                     <h5><i className="fa fa-chevron-right"></i> Venue</h5>
 
@@ -58,11 +59,7 @@ const Location = ({place}) => (
 
             </div>
 
-
-            <div className="image-attribution">
-                <a href="https://www.flickr.com/photos/floris-oosterveld/9356064319" target="_blank">Background Image “An der Uni”</a> by <a href="https://www.flickr.com/photos/martinroell/" target="_blank">Martina Roell</a> (
-                <a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank">CC BY-SA 2.0</a>)
-            </div>
+            <Attribution {...image}/>
         </div>
     </div>
 )

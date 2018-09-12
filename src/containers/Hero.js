@@ -2,6 +2,8 @@ import React from 'react'
 import DayJS from 'dayjs'
 import { withRouteData} from 'react-static'
 
+import Attribution from './Attribution'
+
 const months = [
     'Jan', 'Feb', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Out', 'Nov', 'Dic'
 ]
@@ -11,7 +13,15 @@ const slice = (s, l = 50) =>
             ?  s
              : `${s.slice(0, l)}…`
 
-const NewsShortItem = ({data: {title, date}, content}) => {
+const _ = (k) => (
+    {
+        When: 'Cuando',
+        Where: 'Onde',
+        'News Archive': 'Mais Articulos'
+    }[k]
+)
+
+const NewsShortItem = ({data: {title, date}, content, _ = _}) => {
     const d = DayJS(date)
     return (
         <div>
@@ -39,7 +49,7 @@ const NewsShortItem = ({data: {title, date}, content}) => {
 
 const Hero = withRouteData(({title, subtitle, date, place, image,  posts}) => (
     <div className="header" style={{
-        backgroundImage: `url(${image})`
+        backgroundImage: `url(${image.url})`
     }}>
         <div className="container">
 
@@ -59,7 +69,7 @@ const Hero = withRouteData(({title, subtitle, date, place, image,  posts}) => (
                     <i className="fa fa-calendar"></i>
                 </div>
                 <div>
-                    <p><strong>When</strong></p>
+                    <p><strong>{_('When')}</strong></p>
                     <p><span>{date}</span></p>
                 </div>
             </div>
@@ -70,7 +80,7 @@ const Hero = withRouteData(({title, subtitle, date, place, image,  posts}) => (
                 </div>
 
                 <div>
-                    <p><strong>Where</strong></p>
+                    <p><strong>{_('Where')}</strong></p>
                     <p><span>{place.city} {place.state}</span><br />{place.location}</p>
                 </div>
 
@@ -79,15 +89,11 @@ const Hero = withRouteData(({title, subtitle, date, place, image,  posts}) => (
             <div className="news-list">
                 {posts.slice(0, 3).map(post => <NewsShortItem {...post} />)}
                 <div className="archive-link">
-                    <a href="/archive/">&raquo; News Archive</a>
+                    <a href="/archive/">&raquo; {_('News Archive')}</a>
                 </div>
             </div>
 
-            <div className="image-attribution">
-
-                <a href="https://www.flickr.com/photos/floris-oosterveld/9356064319" target="_blank">Background Image “Würzburg”</a> by <a href="https://www.flickr.com/people/floris-oosterveld/" target="_blank">Floris Oosterveld</a>
-                (<a href="https://creativecommons.org/licenses/by/2.0" target="_blank">CC BY 2.0</a>)
-    </div>
+            <Attribution {...image}/>
         </div>
     </div>
 ))
