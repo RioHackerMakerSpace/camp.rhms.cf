@@ -1,4 +1,5 @@
 import React from 'react'
+import Markdown from 'react-markdown'
 import { withRouteData } from 'react-static'
 
 const Registration = withRouteData(({infos: {registration}}) => (
@@ -10,7 +11,7 @@ const Registration = withRouteData(({infos: {registration}}) => (
             <div className="row">
                 <div className="form">
                     <h3>{registration.data.subtitle}</h3>
-                    {registration.content}
+                    <Markdown source={registration.content}/>
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@ const Social = ({twitter}) => (
                 <h2>Keep me informed</h2>
                 <p className="subtitle">Follow us on Twitter</p>
 
-                <a href={`https://twitter.com/${twitter.handle}`} target="_blank"><i className="fa fa-twitter"></i></a>
+                <a href={`https://twitter.com/${twitter}`} target="_blank"><i className="fa fa-twitter"></i></a>
             </div>
         </div>
     </div>

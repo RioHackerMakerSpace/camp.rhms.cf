@@ -79,7 +79,7 @@ export default {
     title: 'React Static with Netlify CMS',
     social: {
       twitter: 'RHMS'
-    }
+    },
     conf: {
       title: 'HackCamp 2018',
       date: '12 ao 14 de Outoubro 2018',
