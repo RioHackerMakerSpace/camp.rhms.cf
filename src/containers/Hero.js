@@ -8,8 +8,8 @@ const months = [
 
 const slice = (s, l = 50) =>
     s.length < l
-?  s
-: `${s.slice(0, l)}…`
+            ?  s
+             : `${s.slice(0, l)}…`
 
 const NewsShortItem = ({data: {title, date}, content}) => {
     const d = DayJS(date)
@@ -37,8 +37,10 @@ const NewsShortItem = ({data: {title, date}, content}) => {
     )
 }
 
-const Hero = withRouteData(({title, subtitle, date, place, posts}) => (
-    <div className="header">
+const Hero = withRouteData(({title, subtitle, date, place, image,  posts}) => (
+    <div className="header" style={{
+        backgroundImage: `url(${image})`
+    }}>
         <div className="container">
 
             <h1><a href="/">{title}</a></h1>
@@ -85,7 +87,7 @@ const Hero = withRouteData(({title, subtitle, date, place, posts}) => (
 
                 <a href="https://www.flickr.com/photos/floris-oosterveld/9356064319" target="_blank">Background Image “Würzburg”</a> by <a href="https://www.flickr.com/people/floris-oosterveld/" target="_blank">Floris Oosterveld</a>
                 (<a href="https://creativecommons.org/licenses/by/2.0" target="_blank">CC BY 2.0</a>)
-            </div>
+    </div>
         </div>
     </div>
 ))

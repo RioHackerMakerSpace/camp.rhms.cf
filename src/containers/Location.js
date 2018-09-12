@@ -1,7 +1,9 @@
 import React from 'react'
 
 const Location = ({place}) => (
-    <div className="location section imgover">
+    <div className="location section imgover" style={{
+        backgroundImage: `url(${place.image})`
+    }}>
         <div className="container">
 
             <h2>Location and Venue</h2>

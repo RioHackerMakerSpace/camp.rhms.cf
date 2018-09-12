@@ -94,13 +94,14 @@ export default {
       conf: {
         title: 'HackCamp 2018',
         date: '12 ao 14 de Outoubro 2018',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Palmares-Paty_do_Alferes.jpg/768px-Palmares-Paty_do_Alferes.jpg',
         place: {
           location: 'Jardim 5.0',
           city: 'Paty Do Alferes',
           state: 'RJ',
           country: 'Brasil',
-          description: 'Paty do Alferes é um município no interior do estado do Rio de Janeiro. Ocupa uma área de 319,103 km². Seus habitantes são denominados como patienses, sendo um dos importantes centros culturais do estado.'
-
+          description: 'Paty do Alferes é um município no interior do estado do Rio de Janeiro. Ocupa uma área de 319,103 km². Seus habitantes são denominados como patienses, sendo um dos importantes centros culturais do estado.',
+          image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Paty_do_Alferes_%28cerca_1930%29.jpg/1024px-Paty_do_Alferes_%28cerca_1930%29.jpg'
         }
       },
       events: eventsByDay(events)
