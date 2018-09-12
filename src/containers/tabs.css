@@ -85,18 +85,18 @@ h1 {
     color: #34495e;
 }
 
-#tab0:checked ~ nav .tab0 label,
-#tab1:checked ~ nav .tab1 label,
-#tab2:checked ~ nav .tab2 label,
-#tab3:checked ~ nav .tab3 label {
+#tab0:checked ~ .pc-select .tab0 label,
+#tab1:checked ~ .pc-select .tab1 label,
+#tab2:checked ~ .pc-select .tab2 label,
+#tab3:checked ~ .pc-select .tab3 label {
     background-color: #9c001a;
     color: #fff;
     position: relative;
 }
-#tab0:checked ~ nav .tab0 label:after,
-#tab1:checked ~ nav .tab1 label:after,
-#tab2:checked ~ nav .tab2 label:after,
-#tab3:checked ~ nav .tab3 label:after {
+#tab0:checked ~ .pc-select .tab0 label:after,
+#tab1:checked ~ .pc-select .tab1 label:after,
+#tab2:checked ~ .pc-select .tab2 label:after,
+#tab3:checked ~ .pc-select .tab3 label:after {
     content: '';
     display: block;
     position: absolute;
