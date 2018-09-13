@@ -1,6 +1,6 @@
 import React from 'react'
 import DayJS from 'dayjs'
-import { withRouteData} from 'react-static'
+import { withRouteData, Link } from 'react-static'
 
 import Attribution from './Attribution'
 
@@ -21,28 +21,29 @@ const _ = (k) => (
     }[k]
 )
 
-const NewsShortItem = ({data: {title, date}, content, _ = _}) => {
+const NewsShortItem = ({data: {title, date, slug}, content, _ = _}) => {
     const d = DayJS(date)
     return (
         <div>
-            <a href="/news/2017-09-18-summer-school-started/">
+            <Link to={`/blog/post/${slug}`}>
                 <div className="recent-news info-box right">
 
                     <div className="icon-holder">
 
                         <span className="date">{d.$D}</span>
                         <span className="month">{months[d.$M]}</span>
-                    </div>
+                        </div>
 
-                    <div>
-                        <p><strong>
-                            {title}
-                        </strong></p>
-                        <p><span>{slice(content)}</span><br /></p>
-                    </div>
+                        <div>
+                            <p><strong>
+                                {title}
+                            </strong></p>
+                            <p><span>{slice(content)}</span><br /></p>
+                        </div>
 
                 </div>
-            </a>
+            </Link>
+            
         </div>
     )
 }
@@ -81,7 +82,10 @@ const Hero = withRouteData(({title, subtitle, date, place, image,  posts}) => (
 
                 <div>
                     <p><strong>{_('Where')}</strong></p>
-                    <p><span>{place.city} {place.state}</span><br />{place.location}</p>
+
+                    <p>
+                        <span>{place.city} {place.state}</span><br />{place.location}
+                    </p>
                 </div>
 
             </div>
