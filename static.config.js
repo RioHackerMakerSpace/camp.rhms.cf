@@ -57,7 +57,7 @@ const parseDate = (date) => {
   const year = date.substr(0, 4);
   const month = parseInt(date.substr(4, 2), 10) - 1;
   const day = date.substr(6, 2);
-  const hour = date.substr(9, 2);
+  const hour = date.substr(9, 2) - 3;
   const minute = date.substr(11, 2);
   const second = date.substr(13, 2);
 
@@ -116,7 +116,7 @@ export default {
         },
         place: {
           location: 'Jardim 5.0',
-          url: 'https://www.google.com/maps/@-22.3986366,-43.3664379,3a,51.7y,182.44h,89.42t/data=!3m6!1e1!3m4!1sQzRNnqnN6pHR61Iz0sDzsw!2e0!7i13312!8i6656?shorturl=1'
+          url: 'https://www.google.com/maps/@-22.3986366,-43.3664379,3a,51.7y,182.44h,89.42t/data=!3m6!1e1!3m4!1sQzRNnqnN6pHR61Iz0sDzsw!2e0!7i13312!8i6656?shorturl=1',
           city: 'Paty Do Alferes',
           state: 'RJ',
           country: 'Brasil',
