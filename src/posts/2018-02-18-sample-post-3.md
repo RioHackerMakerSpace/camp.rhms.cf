@@ -1,10 +1,13 @@
 ---
 layout: blog
-title: 'Sample Post #3'
+title: Onde Ficar ? Como chegar ?
 date: 2018-02-19T00:48:58.232Z
 thumbnail: /uploads/image3.jpg
 rating: '5'
 ---
-This is sample post #3.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi in nulla posuere sollicitudin aliquam. Turpis massa sed elementum tempus egestas. Tincidunt augue interdum velit euismod in. Orci dapibus ultrices in iaculis nunc sed augue. Fames ac turpis egestas maecenas pharetra convallis posuere morbi. At volutpat diam ut venenatis tellus in metus vulputate eu. Vel turpis nunc eget lorem dolor sed viverra ipsum. Convallis a cras semper auctor. Cras ornare arcu dui vivamus arcu felis bibendum ut tristique. Id aliquet lectus proin nibh. Tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse.
+Quando as reservas das barracas acabarem as únicas opções para pernoite deverão ser encontradas pelos próprios interessados através de contato direto com moradores, hotéis, pousadas e airbnb.
+Até o momento ainda não temos apoio para o transporte Rio X Paty. Estamos trabalhando com a opção de alugar um ônibus para 40 pessoas com custo de até R$60,00 para ir e voltar do evento. Você precisa nos informar que deseja ir neste ônibus para reservarmos seu lugar, limitado ao número de 40 pessoas
+Para melhor organizarmos o evento, vamos precisar que você nos confirme a reserva do espaço no camping , que está limitada aos número de 15 barracas.  As barracas e utensílios são responsabilidade dos participantes.
+Caso você não precise de barraca, pode frequentar todos os dias do evento, que é gratuito.
+Confirme logo sua inscrição e bora Hackear tudo! 
+https://docs.google.com/forms/d/e/1FAIpQLSf3VGl860avGNzaJMWoWHghXCuyQjXtn1XYI1_MKOx1cKVu8w/viewform
