@@ -101,7 +101,7 @@ export default {
       }],
       conf: {
         title: 'HackCamp 2018',
-        date: '12 ao 14 de Outoubro 2018',
+        date: '12 a 14 de Outoubro 2018',
         image: {
           url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Palmares-Paty_do_Alferes.jpg/768px-Palmares-Paty_do_Alferes.jpg',
           title: 'Um dos melhores climas do mundo!!',

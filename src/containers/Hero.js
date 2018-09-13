@@ -15,7 +15,7 @@ const slice = (s, l = 50) =>
 
 const _ = (k) => (
     {
-        When: 'Cuando',
+        When: 'Quando',
         Where: 'Onde',
         'News Archive': 'Mais Articulos'
     }[k]
