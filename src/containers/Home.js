@@ -18,7 +18,7 @@ export default withSiteData(({conf, events, social, housing}) => (
       <Schedule events={events}/>
       <Registration/>
       <Location {...conf} housing={housing}/>
-      <Social {...social}/>
+      { /* <Social {...social}/> */}
       <Footer/>
   </div>
 ))
