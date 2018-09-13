@@ -3,7 +3,7 @@ import React from 'react'
 import Event from './Event'
 import './tabs.css'
 
-const Schedule = ({events}) => {
+const Schedule = ({events, schedule}) => {
     const days = Object.keys(events)
 
     return (
@@ -12,8 +12,8 @@ const Schedule = ({events}) => {
 
                 <h2>Conference Schedule</h2>
 
-                <p className="text"><a href="/data/Declare17_Schedule.pdf" target="_blank">&raquo; Download Schedule as PDF </a>
-                </p>
+                {schedule && <p className="text"><a href="/data/Declare17_Schedule.pdf" target="_blank">&raquo; Download Schedule as PDF </a>
+                </p>}
 
                 <div className="pc-tab">
                     {days.map((day, i) =>
