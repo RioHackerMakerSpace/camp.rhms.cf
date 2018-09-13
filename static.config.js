@@ -94,6 +94,11 @@ export default {
       social: {
         twitter: 'RHMS'
       },
+      sponsors: [{
+        name: 'Portabilis',
+        url: 'https://portabilis.com.br',
+        image: '/assets/portabilis.svg'
+      }],
       conf: {
         title: 'HackCamp 2018',
         date: '12 ao 14 de Outoubro 2018',
