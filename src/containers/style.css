@@ -2203,6 +2203,7 @@ h2 + .bullets {
     color: #fff
 }
 
+.sponsors .container,
 .social .container {
     max-width: 100%;
     padding-top: 114px;

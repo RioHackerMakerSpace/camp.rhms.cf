@@ -8,7 +8,7 @@ const Sponsor = ({name, url, image}) => (
 )
 
 const Sponsors = ({sponsors}) => (
-    <div className="social section">
+    <div className="sponsors section">
         <div className="container">
             <div>
                 <h2>Agradecemos nossos sponsors</h2>
