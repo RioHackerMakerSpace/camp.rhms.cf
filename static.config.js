@@ -1,7 +1,9 @@
-const fs = require('fs')
-const klaw = require('klaw')
-const path = require('path')
-const matter = require('gray-matter')
+import fs from 'fs'
+import klaw from 'klaw'
+import path from 'path'
+import matter from 'gray-matter'
+import GSheets from 'picosheet'
+import ical2json from 'ical2json'
 import axios from 'axios'
 import React, { Component } from 'react'
 import { ServerStyleSheet } from 'styled-components'
@@ -47,8 +49,8 @@ const getMD = (filePath) => {
 }
 
 const getPosts = () => getMD('./src/posts')
+const getHousing = async () => GSheets('1izRv2WQ_mKcibrgC0zgTdLNYCHDaydDm9cFsbTuzgnA', 0, 200)
 
-const ical2json = require('ical2json')
 const url = `https://calendar.google.com/calendar/ical/l1rhpqh5tk0dgr8373kchtae5s%40group.calendar.google.com/private-f330c43ef49f9d4bf13d774f55fe5c91/basic.ics`
 
 const parseDate = (date) => {
@@ -85,6 +87,7 @@ const eventsByDay = (events) => events.reduce((acc, cur) => {
 export default {
   getSiteData: async () => {
     const events = await getEvents()
+    const housing = await getHousing()
 
     return {
       title: 'React Static with Netlify CMS',
@@ -126,7 +129,8 @@ export default {
           }
         }
       },
-      events: eventsByDay(events)
+      events: eventsByDay(events),
+      housing
     }
   },
   getRoutes: async () => {

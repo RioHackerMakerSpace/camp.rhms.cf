@@ -17,6 +17,7 @@
     "ical2json": "^1.2.0",
     "klaw": "^2.1.1",
     "node-fetch": "^2.2.0",
+    "picosheet": "^0.0.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-hot-loader": "^4.0.0-beta.21",

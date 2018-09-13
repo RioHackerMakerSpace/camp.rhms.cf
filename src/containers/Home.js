@@ -11,13 +11,13 @@ import Footer from './Footer'
 
 import './style.css'
 
-export default withSiteData(({conf, events, social}) => (
+export default withSiteData(({conf, events, social, housing}) => (
   <div className="page declare">
       <Hero {...conf}/>
       <Intro/>
       <Schedule events={events}/>
       <Registration/>
-      <Location {...conf}/>
+      <Location {...conf} housing={housing}/>
       <Social {...social}/>
       <Footer/>
   </div>

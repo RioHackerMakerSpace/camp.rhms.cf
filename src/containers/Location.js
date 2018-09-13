@@ -1,9 +1,17 @@
 import React from 'react'
 import Attribution from './Attribution'
 
-const Location = ({place: {image, location, city, state, country, description}}) => (
-    <div className="location section imgover" style={{
-        backgroundImage: `url(${image.url})`
+const Place = ({nome, endereco, city, state}) => (
+    <div className="venue">
+        <p><span><a href="https://wueaddress.uni-wuerzburg.de/building/3123" target="blank">{nome}</a></span></p>
+        <p>{endereco}</p>
+        <p>{city} - {state}</p>
+    </div>
+)
+
+const Location = ({place: {image, location, city, state, country, description}, housing}) => (
+                                                                                              <div className="location section imgover" style={{
+                                                                                                                                                backgroundImage: `url(${image.url})`
     }}>
         <div className="container">
 
@@ -22,35 +30,10 @@ const Location = ({place: {image, location, city, state, country, description}})
                     <h4>{description}</h4>
 
                     <h5><i className="fa fa-chevron-right"></i> Venue</h5>
-
-                    <div className="venue">
-                        <p><span><a href="https://wueaddress.uni-wuerzburg.de/building/3123" target="blank">Zentrales Hörsaal- &amp; Seminargebäude Z6</a></span></p>
-                        <p>Am Hubland</p>
-                        <p>97074 Würzburg</p>
-                    </div>
+                    <Place {...housing[0]}/>
 
                     <h5><i className="fa fa-chevron-right"></i> Accommodation</h5>
-
-                    <div className="venue">
-                        <p><span>Hotel Poppular</span></p>
-                        <p>Textorstraße 17</p>
-                        <p>+49 931 322770</p>
-                        <a href="http://hotelpoppular.de/">Website</a>
-                    </div>
-
-                    <div className="venue">
-                        <p><span>Hotel Zur Stadt Mainz</span></p>
-                        <p>Semmelstraße 395</p>
-                        <p>+49 931 53155</p>
-                        <a href="http://www.hotel-stadtmainz.de/">Website</a>
-                    </div>
-
-                    <div className="venue">
-                        <p><span>Hotel Würzburger Hof</span></p>
-                        <p>Barbarossaplatz 2</p>
-                        <p>+49 931 53814</p>
-                        <a href="https://www.hotel-wuerzburgerhof.de/">Website</a>
-                    </div>
+                    {housing.slice(1).map(p => <Place {...p}/>)}
 
                     <h5><i className="fa fa-chevron-right"></i> Additional details</h5>
 
