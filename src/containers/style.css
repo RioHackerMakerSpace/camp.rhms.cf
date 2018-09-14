@@ -296,9 +296,7 @@ a:hover {
 }
 
 .header ul li {
-    float: left;
-    margin-right: 10px;
-    flex: 1;
+    margin: auto;
 }
 
 .header ul li a {
