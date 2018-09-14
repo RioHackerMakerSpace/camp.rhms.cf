@@ -3,11 +3,11 @@ import React from 'react'
 import Event from './Event'
 import './tabs.css'
 
-const Schedule = ({events, schedule}) => {
+const Schedule = ({id, events, schedule}) => {
     const days = Object.keys(events)
 
     return (
-        <div className="schedule section">
+        <div className="schedule section" id={id}>
             <div className="container">
 
                 <h2>Conference Schedule</h2>

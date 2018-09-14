@@ -2,8 +2,8 @@ import React from 'react'
 import Markdown from 'react-markdown'
 import { withRouteData } from 'react-static'
 
-const Intro = withRouteData(({infos: {intro}}) => (
-    <div className="intro">
+const Intro = withRouteData(({id, infos: {intro}}) => (
+    <div className="intro" id={id}>
         <div className="container" style={{
             backgroundImage: `url(${intro.image})`
         }}>

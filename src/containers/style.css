@@ -603,12 +603,12 @@ a:hover {
 
 @media screen {
     .section {
-        padding-top: 60px
+        margin-top: 60px
     }
 }
 
 .section.long {
-    padding-top: 124px
+    margin-top: 124px
 }
 
 .section h2,
@@ -1621,11 +1621,14 @@ h2 + .bullets {
     margin-bottom: 40px
 }
 
+.registration div {
+    padding: 0 60px
+}
+
 .registration h3 {
     font-size: 1.85714em;
     font-weight: 300;
     color: #7226f5;
-    padding: 0 60px
 }
 
 .registration .form {

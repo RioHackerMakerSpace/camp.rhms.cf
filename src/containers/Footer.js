@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Footer = () => (
-    <div className="footer">
+const Footer = ({id}) => (
+    <div className="footer" id={id}>
         <div className="container">
             <div className="bmbf">
                 <p>

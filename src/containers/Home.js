@@ -22,12 +22,12 @@ export default withSiteData(({conf, events, social, housing, sponsors}) => (
           {name: 'Contacto', url: '#contact'},
         ]
       }/>
-      <Intro/>
-      <Schedule events={events}/>
-      <Registration/>
+      <Intro id="intro"/>
+      <Schedule events={events} id="schedule"/>
+      <Registration id="registration"/>
       <Location {...conf} housing={housing}/>
       { /* <Social {...social}/> */}
       <Sponsors sponsors={sponsors}/>
-      <Footer/>
+      <Footer id="contact"/>
   </div>
 ))
