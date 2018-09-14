@@ -286,20 +286,24 @@ a:hover {
 }
 
 .header ul {
+    width: 100%;
     list-style-type: none;
     padding: 15px 60px;
     max-width: 1180px;
-    margin: 0 auto
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 .header ul li {
     float: left;
-    margin-right: 10px
+    margin-right: 10px;
+    flex: 1;
 }
 
 .header ul li a {
     font-size: 1.14286em;
-    color: #fff;
+    color: #7226f5;
     text-transform: uppercase;
     font-weight: 300
 }

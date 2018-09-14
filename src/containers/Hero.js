@@ -48,12 +48,18 @@ const NewsShortItem = ({data: {title, date, slug}, content, _ = _}) => {
     )
 }
 
-const Hero = withRouteData(({title, subtitle, date, place, image,  posts}) => (
+const Hero = withRouteData(({title, subtitle, date, place, image,  posts, sections}) => (
     <div className="header" style={{
         backgroundImage: `url(${image.url})`
     }}>
         <div className="container">
             <img src="./assets/hacker-camp-header.svg"/>
+
+            <ul className="sections-menu">
+                {sections.map(s => <li className="section-menu">
+                    <a href={s.url}>{s.name}</a>
+                </li>)}
+            </ul>
 
             <div className="news-list">
                 {posts.slice(0, 3).map(post => <NewsShortItem {...post} />)}

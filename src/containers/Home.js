@@ -14,7 +14,14 @@ import './style.css'
 
 export default withSiteData(({conf, events, social, housing, sponsors}) => (
   <div className="page declare">
-      <Hero {...conf}/>
+      <Hero {...conf} sections={
+        [
+          {name: 'Como Chegar', url: '#intro'},
+          {name: 'Programação', url: '#schedule'},
+          {name: 'Inscrições', url: '#registration'},
+          {name: 'Contacto', url: '#contact'},
+        ]
+      }/>
       <Intro/>
       <Schedule events={events}/>
       <Registration/>
