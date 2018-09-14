@@ -35,7 +35,7 @@ h1 {
     text-align: center;
     font-weight: 100;
     font-size: 60px;
-    color: #e74c3c;
+    color: #72f;
 }
 
 .pc-tab {
@@ -57,11 +57,11 @@ h1 {
     color: #444;
 }
 .pc-tab ul li label:hover {
-    background-color: #ff6982;
+    background-color: #89f;
     color: #fff;
 }
 .pc-tab ul li label:active {
-    background-color: #9c001a;
+    background-color: #7226f5;
     color: #fff
 }
 .pc-tab ul li:not(:last-child) label {
@@ -89,7 +89,7 @@ h1 {
 #tab1:checked ~ .pc-select .tab1 label,
 #tab2:checked ~ .pc-select .tab2 label,
 #tab3:checked ~ .pc-select .tab3 label {
-    background-color: #9c001a;
+    background-color: #7226f5;
     color: #fff;
     position: relative;
 }

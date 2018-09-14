@@ -32,18 +32,18 @@ const NewsShortItem = ({data: {title, date, slug}, content, _ = _}) => {
 
                         <span className="date">{d.$D}</span>
                         <span className="month">{months[d.$M]}</span>
-                        </div>
+                    </div>
 
-                        <div>
-                            <p><strong>
-                                {title}
-                            </strong></p>
-                            <p><span>{slice(content)}</span><br /></p>
-                        </div>
+                    <div>
+                        <p><strong>
+                            {title}
+                        </strong></p>
+                        <p><span>{slice(content)}</span><br /></p>
+                    </div>
 
                 </div>
             </Link>
-            
+
         </div>
     )
 }
@@ -53,47 +53,12 @@ const Hero = withRouteData(({title, subtitle, date, place, image,  posts}) => (
         backgroundImage: `url(${image.url})`
     }}>
         <div className="container">
-
-            <h1><a href="/">{title}</a></h1>
-            <p className="subtitle">
-                {subtitle}
-            </p>
-
-            <div className="url info-box">
-                <div>
-                    <p><a href="http://declare17.de" target="_blank">www.declare17.de</a></p>
-                </div>
-            </div>
-
-            <div className="when info-box">
-                <div className="icon-holder">
-                    <i className="fa fa-calendar"></i>
-                </div>
-                <div>
-                    <p><strong>{_('When')}</strong></p>
-                    <p><span>{date}</span></p>
-                </div>
-            </div>
-
-            <div className="where info-box">
-                <div className="icon-holder">
-                    <i className="fa fa-map-marker"></i>
-                </div>
-
-                <div>
-                    <p><strong>{_('Where')}</strong></p>
-
-                    <p>
-                        <span>{place.city} {place.state}</span><br />{place.location}
-                    </p>
-                </div>
-
-            </div>
+            <img src="./assets/hacker-camp-header.svg"/>
 
             <div className="news-list">
                 {posts.slice(0, 3).map(post => <NewsShortItem {...post} />)}
                 <div className="archive-link">
-                    <a href="/blog/">&raquo; {_('News Archive')}</a>
+                    <a href="/blogcp /">&raquo; {_('News Archive')}</a>
                 </div>
             </div>
 

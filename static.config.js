@@ -57,7 +57,7 @@ const parseDate = (date) => {
   const year = date.substr(0, 4);
   const month = parseInt(date.substr(4, 2), 10) - 1;
   const day = date.substr(6, 2);
-  const hour = date.substr(9, 2) - 3;
+  const hour = parseInt(date.substr(9, 2)) - 3;
   const minute = date.substr(11, 2);
   const second = date.substr(13, 2);
 
