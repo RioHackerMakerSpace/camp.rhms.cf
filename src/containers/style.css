@@ -401,6 +401,8 @@ a:hover {
 }
 
 .info-box {
+    display: flex;
+    flex-direction: row-reverse;
     font-size: 1.28571em;
     font-weight: 300;
     padding: 6px 10px 6px 0
@@ -431,7 +433,8 @@ a:hover {
 .info-box .icon-holder span.date {
     display: block;
     font-size: 0.85714em;
-    line-height: 24px
+    line-height: 24px;
+    padding: 0 1em;
 }
 
 .info-box .icon-holder span.month {
