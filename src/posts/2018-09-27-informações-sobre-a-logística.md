@@ -7,7 +7,7 @@ rating: '5'
 ---
 # Onde o Jardim 5.0 é aberto
 
-## Hackers do mundo juntam-se! Informações sobre a logística
+## Hackers do mundo univos ! Informações sobre a logística
 
 Depois de árduas negociações, nosso time conseguiu o máximo para o seu conforto! Vamos com um  ônibus que vai sair do Rio de Janeiro para Paty do Alferes e custará R$60,00 para ir e voltar do evento.  
 
