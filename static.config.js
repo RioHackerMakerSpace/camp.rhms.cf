@@ -38,7 +38,7 @@ const getMD = (filePath) => {
         .on('end', () => {
           // Resolve promise for async getRoutes request //
           // posts = items for below routes //
-          resolve(items)
+          resolve(items.reverse())
         })
     } else {
       // If src/posts directory doesn't exist, return items as empty array //

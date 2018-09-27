@@ -40,7 +40,7 @@ const NewsShortItem = ({data: {title, date, slug}, content, _ = _}) => {
                         <p><strong>
                             {title}
                         </strong></p>
-                        <p><span>{slice(content)}</span><br /></p>
+                        <p><span>{slice(content).replace(/#/g, '')}</span><br /></p>
                     </div>
 
                 </div>
