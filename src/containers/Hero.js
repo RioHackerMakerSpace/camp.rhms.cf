@@ -72,7 +72,7 @@ const Hero = withRouteData(({title, subtitle, date, place, image,  posts, sectio
             <div className="news-list">
                 {posts.slice(0, 3).map(post => <NewsShortItem {...post} />)}
                 <div className="archive-link">
-                    <a href="/blogcp /">&raquo; {_('News Archive')}</a>
+                    <a href="/blog/">&raquo; {_('News Archive')}</a>
                 </div>
             </div>
 
