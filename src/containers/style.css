@@ -230,7 +230,8 @@ a:hover {
 
 @media all and (max-width:1180px) {
     .page .container {
-        width: 98%
+        width: 98%;
+        padding: 0px!important;
     }
 }
 
@@ -283,32 +284,6 @@ a:hover {
 
 .header .menu {
     background: rgba(156, 0, 26, 0.8)
-}
-
-.header ul {
-    width: 100%;
-    list-style-type: none;
-    padding: 15px 60px;
-    max-width: 1180px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-}
-
-.header ul li {
-    margin: auto;
-}
-
-.header ul li a {
-    font-size: 1.14286em;
-    color: #7226f5;
-    text-transform: uppercase;
-    font-weight: 300
-}
-
-.header ul li a:hover,
-.header ul li a.active {
-    color: #000
 }
 
 .header h1 {
@@ -1601,11 +1576,6 @@ h2 + .bullets {
 
 .sponsors h2 {
     margin-bottom: 0
-}
-
-.registration {
-    padding-left: 60px;
-    padding-right: 60px
 }
 
 .registration .desc {

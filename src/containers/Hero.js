@@ -4,6 +4,8 @@ import { withRouteData, Link } from 'react-static'
 
 import Attribution from './Attribution'
 
+import './burger.css'
+
 const months = [
     'Jan', 'Feb', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Out', 'Nov', 'Dic'
 ]
@@ -54,12 +56,18 @@ const Hero = withRouteData(({title, subtitle, date, place, image,  posts, sectio
     }}>
         <div className="container">
             <img src="./assets/hacker-camp-header.svg"/>
+            <nav class="nav nav-sections">
+                <label>
+                    <input type="checkbox"/>
+                    <i class="fa fa-bars pointer"></i>
 
-            <ul className="sections-menu">
-                {sections.map(s => <li className="section-menu">
-                    <a href={s.url}>{s.name}</a>
-                </li>)}
-            </ul>
+                    <ul className="sections-menu">
+                        {sections.map(s => <li className="section-menu">
+                            <a href={s.url}>{s.name}</a>
+                        </li>)}
+                    </ul>
+                </label>
+            </nav>
 
             <div className="news-list">
                 {posts.slice(0, 3).map(post => <NewsShortItem {...post} />)}
