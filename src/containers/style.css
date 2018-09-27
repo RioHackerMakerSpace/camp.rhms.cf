@@ -220,7 +220,7 @@ a:hover {
     overflow: hidden
 }
 
-.page .container {
+.container {
     max-width: 1180px;
     position: relative;
     background: #edff1e;
@@ -228,6 +228,9 @@ a:hover {
     border-right: 20px solid #7226f5;
 }
 
+.container img {
+    max-width: 100%;
+}
 @media all and (max-width:1180px) {
     .page .container {
         width: 98%;
