@@ -48,8 +48,24 @@ const getMD = (filePath) => {
   return getFiles(filePath)
 }
 
+const speakerMap = {
+  'Nome': 'name',
+  'Organização': 'title',
+  'URL': 'url',
+  'Foto': 'pic',
+  'Redes sociais': 'social',
+  'bios': 'bio',
+  'Tipo de palestra': 'type',
+  'Descrição': 'desc'
+}
+
 const getPosts = () => getMD('./src/posts')
 const getHousing = async () => GSheets('1izRv2WQ_mKcibrgC0zgTdLNYCHDaydDm9cFsbTuzgnA', 0, 200)
+const getSpeakers = async () => GSheets('1tOiNeMkkOdi1wZNMtKOib_4TVUgEhJh_1zp6Vt4CyxM', 0, 200)
+  .then(speakers => speakers.map(e => Object.keys(e).reduce((acc, k) => Object.assign(
+    {}, acc, {
+      [speakerMap[k]]: e[k]
+    }), {})))
 
 const url = `https://calendar.google.com/calendar/ical/l1rhpqh5tk0dgr8373kchtae5s%40group.calendar.google.com/private-f330c43ef49f9d4bf13d774f55fe5c91/basic.ics`
 
@@ -88,6 +104,7 @@ export default {
   getSiteData: async () => {
     const events = await getEvents()
     const housing = await getHousing()
+    const speakers = await getSpeakers()
 
     return {
       title: 'React Static with Netlify CMS',
@@ -136,7 +153,8 @@ export default {
         }
       },
       events: eventsByDay(events),
-      housing
+      housing,
+      speakers
     }
   },
   getRoutes: async () => {

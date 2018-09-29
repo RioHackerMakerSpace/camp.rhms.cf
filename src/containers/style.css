@@ -1015,6 +1015,10 @@ a:hover {
     }
 }
 
+.speakers ul li {
+    display: inline;
+}
+
 .schedule ul li {
     float: left;
     background-color: #f0f0f0;

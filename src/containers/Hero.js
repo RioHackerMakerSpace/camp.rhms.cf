@@ -1,5 +1,6 @@
 import React from 'react'
 import DayJS from 'dayjs'
+
 import { withRouteData, Link } from 'react-static'
 
 import Attribution from './Attribution'
@@ -29,13 +30,10 @@ const NewsShortItem = ({data: {title, date, slug}, content, _ = _}) => {
         <div>
             <Link to={`/blog/post/${slug}`}>
                 <div className="recent-news info-box right">
-
                     <div className="icon-holder">
-
                         <span className="date">{d.$D}</span>
                         <span className="month">{months[d.$M]}</span>
                     </div>
-
                     <div>
                         <p><strong>
                             {title}
