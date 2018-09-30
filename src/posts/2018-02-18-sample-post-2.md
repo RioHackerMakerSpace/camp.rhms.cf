@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: O que acontece no Hack Camp?
-date: 2018-02-19T00:46:54.386Z
+date: '2018-09-17T21:46:00-03:00'
 thumbnail: /uploads/image.jpg
 rating: '5'
 ---
