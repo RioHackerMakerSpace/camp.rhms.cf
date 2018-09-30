@@ -55,7 +55,7 @@ h1 {
     color: #fff;
 }
 .pc-tab ul li label:active {
-    background-color: #7226f5;
+    background-color: #edff1e;
     color: #fff
 }
 .pc-tab ul li:not(:last-child) label {
@@ -83,8 +83,8 @@ h1 {
 #tab1:checked ~ .pc-select .tab1 label,
 #tab2:checked ~ .pc-select .tab2 label,
 #tab3:checked ~ .pc-select .tab3 label {
-    background-color: #7226f5;
-    color: #fff;
+    background-color: white;
+    color: #7226f5;
     position: relative;
 }
 #tab0:checked ~ .pc-select .tab0 label:after,
