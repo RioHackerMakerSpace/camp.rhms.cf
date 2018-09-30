@@ -179,6 +179,14 @@ a:hover {
     color: #000
 }
 
+.intro .container * {
+    padding: 0 1em;
+}
+
+.intro .container h1 {
+    padding: 0;
+}
+
 .subtitle,
 .intro h3 {
     font-size: 1.85714em;
@@ -1108,6 +1116,7 @@ a:hover {
         -ms-transform: rotate(90deg);
         -webkit-transform: rotate(90deg);
         transform: rotate(90deg);
+        width: 100vh;
         position: absolute;
         bottom: 0;
         right: 15px;
