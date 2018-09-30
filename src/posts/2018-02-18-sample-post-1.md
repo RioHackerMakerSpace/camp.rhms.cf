@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: Ola Mundo !
-date: 2017-02-19T00:45:43.212Z
+date: '2018-09-12T22:45:00-03:00'
 thumbnail: /uploads/hackercamp_post_01.png
 rating: '5'
 ---
