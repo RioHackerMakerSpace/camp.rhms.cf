@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: Onde Ficar ? Como chegar ?
-date: 2018-02-19T00:48:58.232Z
+date: '2018-09-20T21:48:00-03:00'
 thumbnail: /uploads/image3.jpg
 rating: '5'
 ---
