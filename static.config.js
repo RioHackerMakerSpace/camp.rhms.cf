@@ -69,17 +69,17 @@ const getSpeakers = async () => GSheets('1tOiNeMkkOdi1wZNMtKOib_4TVUgEhJh_1zp6Vt
 
 const url = `https://calendar.google.com/calendar/ical/l1rhpqh5tk0dgr8373kchtae5s%40group.calendar.google.com/private-f330c43ef49f9d4bf13d774f55fe5c91/basic.ics`
 
-const parseDate = (date) => {
-  const year = date.substr(0, 4);
-  const month = parseInt(date.substr(4, 2), 10) - 1;
-  const day = date.substr(6, 2);
-  const hour = parseInt(date.substr(9, 2)) - 3;
-  const minute = date.substr(11, 2);
-  const second = date.substr(13, 2);
-
-  //return new Date(Date.UTC(year, month, day, hour, minute, second));
-  return `${year}-${month}-${day}T${hour}:${minute}:${second}`
-}
+const parseDate = (date) => (
+  {
+    year: date.substr(0, 4),
+    month: parseInt(date.substr(4, 2), 10),
+    day: date.substr(6, 2),
+    hour: parseInt(date.substr(9, 2)) - 3,
+    minute: date.substr(11, 2),
+    second: date.substr(13, 2),
+    raw: date
+  }
+)
 
 const getEvents = async () =>  axios(url)
   .then(({data}) => ical2json.convert(data))
@@ -90,10 +90,13 @@ const getEvents = async () =>  axios(url)
     location: e.LOCATION,
     description: e.DESCRIPTION.replace('\\n',''),
     start: parseDate(e.DTSTART)
-  })).sort((a, b) => a.start > b.start ? 1: -1))
+  })).sort((a, b) => a.start.raw > b.start.raw ? 1: -1))
+
+const months = 'Janeiro_Fevereiro_Março_Abril_Maio_Junho_Julho_Agosto_Setembro_Outubro_Novembro_Dezembro'.split('_')
+const monthsShort = 'Jan_Fev_Mar_Abr_Mai_Jun_Jul_Ago_Set_Out_Nov_Dez'.split('_')
 
 const eventsByDay = (events) => events.reduce((acc, cur) => {
-  const day = cur.start.split('T')[0]
+  const day = `${cur.start.day} ${monthsShort[cur.start.month - 1]}`
   return {
     ...acc,
     [day]: (acc[day] || []).concat(cur)

@@ -2,14 +2,7 @@ import React from 'react'
 import Markdown from 'react-markdown'
 
 const Event = ({start, summary, description, location, slides}) => {
-    let s = start.toString()
-    let d;
-    try {
-        d = s.match(/T(\d\d:\d\d)/)[1]
-    } catch(e) {
-        console.error("FAILED", start, s, d, s.match(/T(\d\d:\d\d)/))
-        d = 'FAILED'
-    }
+    const d = `${start.hour}:${start.minute}`;
 
     return (
             <div className={`event ${description ? 'extend' : ''}`}>
