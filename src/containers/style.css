@@ -1006,7 +1006,9 @@ a:hover {
 }
 
 .schedule ul {
-    list-style-type: none
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 @media print {
@@ -1020,11 +1022,10 @@ a:hover {
 }
 
 .schedule ul li {
-    float: left;
     background-color: #f0f0f0;
-    width: 20%;
     max-width: 290px;
-    min-width: 85px
+    min-width: 85px;
+    margin: 0!important;
 }
 
 .schedule ul li a {
