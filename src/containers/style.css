@@ -1591,7 +1591,8 @@ h2 + .bullets {
 }
 
 .sponsors .container {
-    padding: 0 60px
+    padding: 2em 1em!important;
+    background: #edff1e!important;
 }
 
 .sponsors h2 {

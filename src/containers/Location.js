@@ -10,7 +10,7 @@ const Place = ({nome, endereco, city, state}) => (
 )
 
 const Location = ({place: {image, location, city, state, country, description}, housing}) => (
-    <div className="location section imgover" style={{
+    <div className="location section" style={{
         backgroundImage: `url(${image.url})`
     }}>
         <div className="container">

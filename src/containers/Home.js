@@ -29,7 +29,7 @@ export default withSiteData(({conf, events, social, housing, speakers, sponsors}
       <Speakers speakers={speakers} id="speakers"/>
       <Location {...conf} housing={housing}/>
       { /* <Social {...social}/> */}
-      <Sponsors sponsors={sponsors}/>
+      <Sponsors {...sponsors}/>
       <Footer id="contact"/>
   </div>
 ))

@@ -114,11 +114,50 @@ export default {
       social: {
         twitter: 'RHMS'
       },
-      sponsors: [{
-        name: 'Portabilis',
-        url: 'https://portabilis.com.br',
-        image: '/assets/portabilis.svg'
-      }],
+      sponsors: {
+        sponsors: [{
+          name: 'Portabilis',
+          url: 'https://portabilis.com.br',
+          image: '/assets/portabilis.svg'
+        }],
+        parceiros: [
+          {
+            name: 'RedeLivre',
+            url: 'https://redelivre.org.br',
+            image: '/assets/redelivre.svg'
+          },
+          {
+            name: 'ASL',
+            url: 'https://asl.org.br',
+            image: '/assets/asl-logo.svg'
+          },
+          {
+            name: 'LPI',
+            url: 'https://www.lpi.org',
+            image: '/assets/lpi.svg'
+          },
+          {
+            name: 'PHPRio',
+            url: 'https://php.rio',
+            image: '/assets/PHPRio.svg'
+          },
+          {
+            name: 'HUB UFRJ',
+            url: 'https://www.facebook.com/hub.ufrj',
+            image: '/assets/hubufrj.svg'
+          },
+          {
+            name: 'LUDES UFRJ',
+            url: 'https://ludes.cos.ufrj.br',
+            image: '/assets/ludes.svg'
+          },
+          {
+            name: 'Butter Project',
+            url: 'https://butterproject.org',
+            image: '/assets/butter.svg'
+          }
+        ]
+      },
       conf: {
         title: 'HackCamp 2018',
         date: '12 a 14 de Outoubro 2018',
