@@ -54,13 +54,13 @@ const Hero = withRouteData(({title, subtitle, date, place, image,  posts, sectio
     }}>
         <div className="container">
             <img src="./assets/hacker-camp-header.svg"/>
-            <nav class="nav nav-sections">
+            <nav className="nav nav-sections">
                 <label>
                     <input type="checkbox"/>
-                    <i class="fa fa-bars pointer"></i>
+                    <i className="fa fa-bars pointer"></i>
 
                     <ul className="sections-menu">
-                        {sections.map(s => <li className="section-menu">
+                        {sections.map(s => <li key={s.name} className="section-menu">
                             <a href={s.url}>{s.name}</a>
                         </li>)}
                     </ul>
@@ -68,7 +68,7 @@ const Hero = withRouteData(({title, subtitle, date, place, image,  posts, sectio
             </nav>
 
             <div className="news-list">
-                {posts.slice(0, 3).map(post => <NewsShortItem {...post} />)}
+                {posts.slice(0, 3).map(post => <NewsShortItem key={post.data.title} {...post} />)}
                 <div className="archive-link">
                     <a href="/blog/">&raquo; {_('News Archive')}</a>
                 </div>

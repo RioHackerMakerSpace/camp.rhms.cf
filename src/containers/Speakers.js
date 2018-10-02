@@ -9,7 +9,7 @@ const Speakers = ({id, speakers}) => {
 
                 <h2>Speakers</h2>
                 <ul>
-                    {speakers.map(s => <li><Profile {...s}/></li>)}
+                    {speakers.map(s => <li key={s.name}><Profile {...s}/></li>)}
                 </ul>
             </div>
         </div>)

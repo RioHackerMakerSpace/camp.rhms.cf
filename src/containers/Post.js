@@ -7,7 +7,7 @@ export default withRouteData(({ post }) => (
   <div className="blog-post">
       <Link to="/blog/">{'<'} Back</Link>
       <br />
-      <div class="container">
+      <div className="container">
           <h3>{post.data.title}</h3>
           <Markdown source={post.content} escapeHtml={false} />
           <img className="image" src={post.data.thumbnail} alt="" />

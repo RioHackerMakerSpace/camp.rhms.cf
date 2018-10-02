@@ -33,7 +33,7 @@ const Location = ({place: {image, location, city, state, country, description}, 
                     <Place {...housing[0]}/>
 
                     <h5><i className="fa fa-chevron-right"></i>Acomodações</h5>
-                    {housing.slice(1).map(p => <Place {...p}/>)}
+                    {housing.slice(1).map(p => <Place key={p.nome} {...p}/>)}
 
                 </div>
 

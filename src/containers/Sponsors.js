@@ -15,11 +15,11 @@ const Sponsors = ({sponsors, parceiros}) => (
             <div>
                 <h3>Agradecemos nossos sponsors</h3>
                 <ul className='sponsors-list'>
-                    {sponsors.map(s => <li><Sponsor key={s.name} {...s}/></li>)}
+                    {sponsors.map(s => <li key={s.name}><Sponsor {...s}/></li>)}
                 </ul>
                 <h3>e nossos parceiros</h3>
                 <ul className='sponsors-list'>
-                    {parceiros.map(s => <li><Sponsor key={s.name} {...s}/></li>)}
+                    {parceiros.map(s => <li key={s.name}><Sponsor {...s}/></li>)}
                 </ul>
             </div>
         </div>

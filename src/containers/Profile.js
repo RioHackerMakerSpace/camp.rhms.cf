@@ -4,7 +4,7 @@ import './profile.css'
 
 const Profile = ({name, title, bio, pic, url}) => (
     <div className="profile-card">
-        <div class="profile-left">
+        <div className="profile-left">
             <a href={url}>
                 <img src={pic}/>
                 <h1>{name}</h1>
@@ -12,7 +12,7 @@ const Profile = ({name, title, bio, pic, url}) => (
             </a>
         </div>
 
-        <div class="profile-right">
+        <div className="profile-right">
             <div className="profile-bio">
                 <p>{bio}</p>
             </div>

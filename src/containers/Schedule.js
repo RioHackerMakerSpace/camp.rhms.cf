@@ -21,7 +21,7 @@ const Schedule = ({id, events, schedule}) => {
                     <div className='pc-select'>
                         <ul>
                             {days.map((day, i) => <li key={day} className={`tab tab${i}`}>
-                                <label for={`tab${i}`}>{day}</label>
+                                <label htmlFor={`tab${i}`}>{day}</label>
                             </li>
                             )}
                         </ul>
@@ -29,7 +29,7 @@ const Schedule = ({id, events, schedule}) => {
                     <section>
                         {days.map((day, i) => <div key={day} className={`tab tab${i}`}>
                             { events[day]
-                                .map(e => <Event {...e}/>)}
+                                .map(e => <Event key={e.summary} {...e}/>)}
                         </div>
                         )}
                     </section>
