@@ -1,0 +1,19 @@
+.sponsors-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.sponsors-list li {
+    display: flex;
+    flex: 1 0;
+}
+
+.sponsors-list li  a {
+    display: flex;
+    flex-direction: column;
+}
+
+.sponsors-list li img {
+    min-height: 8em;
+    max-height: 8em;
+    min-width: 8em;
+}
