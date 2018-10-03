@@ -1881,11 +1881,6 @@ h2 + .bullets {
     .location {
         padding-top: 124px
     }
-    .location h2,
-    .location .subtitle {
-        color: #fff;
-        padding: 0 60px
-    }
 }
 
 .location .container {
