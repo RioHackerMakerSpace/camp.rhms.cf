@@ -114,13 +114,13 @@ export default {
       social: {
         twitter: 'RHMS'
       },
-      sponsors: {
+      credits: {
         sponsors: [{
           name: 'Portabilis',
           url: 'https://portabilis.com.br',
           image: '/assets/portabilis.svg'
         }],
-        parceiros: [
+        support: [
           {
             name: 'RedeLivre',
             url: 'https://redelivre.org.br',
@@ -156,7 +156,12 @@ export default {
             url: 'https://butterproject.org',
             image: '/assets/butter.svg'
           }
-        ]
+        ],
+        prod: [{
+          name: 'Rio (Hack|Mak)er Space',
+          url: 'https://rhms.cf',
+          image: '/assets/rhms.svg'
+        }]
       },
       conf: {
         title: 'HackCamp 2018',

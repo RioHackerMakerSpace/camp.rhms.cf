@@ -9,7 +9,7 @@ const Sponsor = ({name, url, image}) => (
     </a>
 )
 
-const Sponsors = ({sponsors, parceiros}) => (
+const Sponsors = ({sponsors, support, prod}) => (
     <div className="sponsors section">
         <div className="container">
             <div>
@@ -19,8 +19,13 @@ const Sponsors = ({sponsors, parceiros}) => (
                 </ul>
                 <h3>e nossos parceiros</h3>
                 <ul className='sponsors-list'>
-                    {parceiros.map(s => <li key={s.name}><Sponsor {...s}/></li>)}
+                    {support.map(s => <li key={s.name}><Sponsor {...s}/></li>)}
                 </ul>
+                <h3>produzido por</h3>
+                <ul className='sponsors-list'>
+                    {prod.map(s => <li key={s.name}><Sponsor {...s}/></li>)}
+                </ul>
+
             </div>
         </div>
     </div>

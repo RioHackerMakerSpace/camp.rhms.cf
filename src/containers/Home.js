@@ -13,7 +13,7 @@ import Footer from './Footer'
 
 import './style.css'
 
-export default withSiteData(({conf, events, social, housing, speakers, sponsors}) => (
+export default withSiteData(({conf, events, social, housing, speakers, credits}) => (
   <div className="page declare">
       <Hero {...conf} sections={
         [
@@ -29,7 +29,7 @@ export default withSiteData(({conf, events, social, housing, speakers, sponsors}
       <Speakers speakers={speakers} id="speakers"/>
       <Location {...conf} housing={housing}/>
       { /* <Social {...social}/> */}
-      <Sponsors {...sponsors}/>
+      <Sponsors {...credits}/>
       <Footer id="contact"/>
   </div>
 ))
