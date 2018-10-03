@@ -132,11 +132,6 @@ export default {
             image: '/assets/asl-logo.svg'
           },
           {
-            name: 'LPI',
-            url: 'https://www.lpi.org',
-            image: '/assets/lpi.svg'
-          },
-          {
             name: 'PHPRio',
             url: 'https://php.rio',
             image: '/assets/PHPRio.svg'
@@ -155,6 +150,11 @@ export default {
             name: 'Butter Project',
             url: 'https://butterproject.org',
             image: '/assets/butter.svg'
+          },
+          {
+            name: 'LPI',
+            url: 'https://www.lpi.org',
+            image: '/assets/lpi.svg'
           }
         ],
         prod: [{
