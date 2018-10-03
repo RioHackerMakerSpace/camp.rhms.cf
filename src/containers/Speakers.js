@@ -2,6 +2,8 @@ import React from 'react'
 
 import Profile from './Profile'
 
+import './speaker.css'
+
 const Speakers = ({id, speakers}) => {
     return (
         <div className="speakers section" id={id}>
