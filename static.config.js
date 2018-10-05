@@ -152,6 +152,11 @@ export default {
             image: '/assets/butter.svg'
           },
           {
+            name: 'IMPA',
+            url: ' https://impa.br',
+            image: '/assets/impa.svg'
+          },
+          {
             name: 'LPI',
             url: 'https://www.lpi.org',
             image: '/assets/lpi.svg'
