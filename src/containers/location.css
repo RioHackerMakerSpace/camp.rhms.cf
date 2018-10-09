@@ -1,0 +1,53 @@
+.location {
+    position: relative;
+    background: #000 url("/images/uniwue-flags.jpg") no-repeat 50% 0 fixed;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("/images/uniwue-flags.jpg") no-repeat 50% 0 fixed;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/images/uniwue-flags.jpg") no-repeat 50% 0 fixed;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/images/uniwue-flags.jpg") no-repeat 50% 0 fixed;
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/images/uniwue-flags.jpg") no-repeat 50% 0 fixed;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/images/uniwue-flags.jpg") no-repeat 50% 0 fixed;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/images/uniwue-flags.jpg") no-repeat 50% 0 fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover
+}
+
+.venues {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.venues li {
+    flex: 1 0 40%;
+    display: block;
+}
+
+@media screen {
+    .location {
+        padding-top: 124px
+    }
+}
+
+.location .container {
+    z-index: 10;
+    position: relative
+}
+
+.location h2 {
+    margin-bottom: 0
+}
+
+@media print {
+    .location .maps {
+        display: none
+    }
+}
+
+@media screen {
+    .location.imgover + .section,
+    .location.imgover + a + .section {
+        -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 40%, 0% 0%);
+        clip-path: polygon(0% 100%, 100% 100%, 100% 40%, 0% 0%)
+    }
+}

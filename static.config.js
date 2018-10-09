@@ -59,13 +59,30 @@ const speakerMap = {
   'Descrição': 'desc'
 }
 
+const housingMap = {
+  'HOSPEDAGEM': 'name',
+  'ENDERECO': 'addr',
+  'URL': 'url'
+}
+
+const failoverGet = (map, key) => {
+  if (map.hasOwnProperty(key)) {
+    return map[key]
+  }
+  return key
+}
+
+const remap = (keyMap) => (source) => source.map(
+  e => Object.keys(e).reduce((acc, k) => Object.assign(
+    {}, acc, {
+      [failoverGet(keyMap, k)]: e[k]
+    }), {}))
+
 const getPosts = () => getMD('./src/posts')
 const getHousing = async () => GSheets('1izRv2WQ_mKcibrgC0zgTdLNYCHDaydDm9cFsbTuzgnA', 0, 200)
+  .then(remap(housingMap))
 const getSpeakers = async () => GSheets('1tOiNeMkkOdi1wZNMtKOib_4TVUgEhJh_1zp6Vt4CyxM', 0, 200)
-  .then(speakers => speakers.map(e => Object.keys(e).reduce((acc, k) => Object.assign(
-    {}, acc, {
-      [speakerMap[k]]: e[k]
-    }), {})))
+  .then(remap(speakerMap))
 
 const url = `https://calendar.google.com/calendar/ical/l1rhpqh5tk0dgr8373kchtae5s%40group.calendar.google.com/private-f330c43ef49f9d4bf13d774f55fe5c91/basic.ics`
 

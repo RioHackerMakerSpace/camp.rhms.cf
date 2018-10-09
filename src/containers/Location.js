@@ -1,11 +1,13 @@
 import React from 'react'
 import Attribution from './Attribution'
 
-const Place = ({nome, endereco, city, state}) => (
+import './location.css'
+
+const Place = ({name, url, addr}) => (
     <div className="venue">
-        <p><span><a href="https://wueaddress.uni-wuerzburg.de/building/3123" target="blank">{nome}</a></span></p>
-        <p>{endereco}</p>
-        <p>{city} - {state}</p>
+        <p><span><a href={url} target="blank">{name}</a></span></p>
+        <p>{addr}</p>
+        <p>Paty do Alferes - RJ</p>
     </div>
 )
 
@@ -30,10 +32,14 @@ const Location = ({place: {image, location, city, state, country, description}, 
                     <h4>{description}</h4>
 
                     <h5><i className="fa fa-chevron-right"></i>Local</h5>
-                    <Place {...housing[0]}/>
+                    <ul className='venues'>
+                        <li><Place {...housing[0]}/></li>
+                    </ul>
 
                     <h5><i className="fa fa-chevron-right"></i>Acomodações</h5>
-                    {housing.slice(1).map(p => <Place key={p.nome} {...p}/>)}
+                    <ul className='venues'>
+                        {housing.slice(1).map(p => <li key={p.name}><Place {...p}/></li>)}
+                    </ul>
 
                 </div>
 
