@@ -16,7 +16,10 @@
 }
 
 .minispeaker span {
-    margin: auto 0!important;
+    margin: auto 0.4em!important;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 0.8em;
+    line-height:1em;
 }
 
 .attendees {
