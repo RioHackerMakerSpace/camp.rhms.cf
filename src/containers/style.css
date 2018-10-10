@@ -644,6 +644,10 @@ a:hover {
     padding-right: 0
 }
 
+.section .container > div:last-of-type {
+    padding-bottom: 2em;
+}
+
 .section .container p.text + ul {
     margin-top: -20px
 }
