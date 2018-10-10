@@ -1,7 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300&subset=latin,latin-ext);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700&subset=latin,latin-ext);
 
-
 .header .menu:after,
 .header ul:after,
 .info-box:after,
@@ -1009,44 +1008,6 @@ a:hover {
     opacity: 1
 }
 
-.schedule ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-@media print {
-    .schedule ul {
-        display: none
-    }
-}
-
-.schedule ul li {
-    background-color: #f0f0f0;
-    max-width: 290px;
-    min-width: 85px;
-    margin: 0!important;
-}
-
-.schedule ul li a {
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 1.71429em;
-    font-family: "Roboto Condensed", sans-serif;
-    line-height: 50px;
-    display: block;
-    padding: 0 30px;
-    width: 100%
-}
-
-@media all and (max-width:780px) {
-    .schedule ul li a {
-        font-size: 1.28571em;
-        padding: 0 20px;
-        line-height: 40px
-    }
-}
-
 .schedule .day {
     padding: 0;
     border: 3px solid #f0f0f0
@@ -1352,11 +1313,6 @@ a:hover {
         margin: 0;
         padding: 0
     }
-}
-
-.event .event-info img {
-    float: right;
-    padding: 10px
 }
 
 @media print {

@@ -14,7 +14,7 @@
     "dayjs": "^1.7.5",
     "font-awesome": "^4.7.0",
     "gray-matter": "^3.1.1",
-    "ical2json": "^1.2.0",
+    "ical2json": "https://github.com/xaiki/ical2json",
     "klaw": "^2.1.1",
     "node-fetch": "^2.2.0",
     "picosheet": "^0.0.3",

@@ -1,0 +1,26 @@
+.minispeaker {
+    display: block;
+    background: transparent!important;
+    padding-right:1em;
+    margin: 0!important;
+}
+
+.minispeaker a {
+    display: flex;
+}
+
+.minispeaker img {
+    width: 2em;
+    height: 2em;
+    border-radius: 4em;
+}
+
+.minispeaker span {
+    margin: auto 0!important;
+}
+
+.attendees {
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+}

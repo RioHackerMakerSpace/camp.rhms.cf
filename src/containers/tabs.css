@@ -48,6 +48,7 @@ h1 {
     padding: 25px;
     border-bottom: 0;
     background: #eeeeee;
+    font-weight: bold;
     color: #444;
 }
 .pc-tab ul li label:hover {
@@ -55,7 +56,7 @@ h1 {
     color: #fff;
 }
 .pc-tab ul li label:active {
-    background-color: #edff1e;
+    background-color:  #7226f5;
     color: #fff
 }
 .pc-tab ul li:not(:last-child) label {

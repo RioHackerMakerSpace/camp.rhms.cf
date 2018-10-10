@@ -56,7 +56,8 @@ const speakerMap = {
   'Redes sociais': 'social',
   'bios': 'bio',
   'Tipo de palestra': 'type',
-  'Descrição': 'desc'
+  'Descrição': 'desc',
+  'e-mail': 'email'
 }
 
 const housingMap = {
@@ -78,11 +79,18 @@ const remap = (keyMap) => (source) => source.map(
       [failoverGet(keyMap, k)]: e[k]
     }), {}))
 
+const rekey = (key) => (source) => source.reduce(
+  (acc, cur) => Object.assign({}, acc, {
+    [cur[key]]: cur
+  }), {}
+)
+
 const getPosts = () => getMD('./src/posts')
 const getHousing = async () => GSheets('1izRv2WQ_mKcibrgC0zgTdLNYCHDaydDm9cFsbTuzgnA', 0, 200)
   .then(remap(housingMap))
 const getSpeakers = async () => GSheets('1tOiNeMkkOdi1wZNMtKOib_4TVUgEhJh_1zp6Vt4CyxM', 0, 200)
   .then(remap(speakerMap))
+  .then(rekey('email'))
 
 const url = `https://calendar.google.com/calendar/ical/l1rhpqh5tk0dgr8373kchtae5s%40group.calendar.google.com/private-f330c43ef49f9d4bf13d774f55fe5c91/basic.ics`
 
@@ -100,13 +108,14 @@ const parseDate = (date) => (
 
 const getEvents = async () =>  axios(url)
   .then(({data}) => ical2json.convert(data))
-  .then(({VCALENDAR}) => VCALENDAR[0].VEVENT)
+  .then(({VEVENT}) => VEVENT)
   .then(events => events.map(e => ({
     key: e.UID,
     summary: e.SUMMARY,
     location: e.LOCATION,
     description: e.DESCRIPTION.replace('\\n',''),
-    start: parseDate(e.DTSTART)
+    start: parseDate(e.DTSTART),
+    attendee: e.ATTENDEE,
   })).sort((a, b) => a.start.raw > b.start.raw ? 1: -1))
 
 const months = 'Janeiro_Fevereiro_Março_Abril_Maio_Junho_Julho_Agosto_Setembro_Outubro_Novembro_Dezembro'.split('_')
