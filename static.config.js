@@ -113,7 +113,7 @@ const getEvents = async () =>  axios(url)
     key: e.UID,
     summary: e.SUMMARY,
     location: e.LOCATION,
-    description: e.DESCRIPTION.replace('\\n',''),
+    description: (e.DESCRIPTION || '').replace('\\n',''),
     start: parseDate(e.DTSTART),
     attendee: e.ATTENDEE,
   })).sort((a, b) => a.start.raw > b.start.raw ? 1: -1))
