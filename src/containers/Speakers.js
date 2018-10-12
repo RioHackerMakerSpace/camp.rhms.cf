@@ -11,9 +11,14 @@ const Speakers = ({id, speakers}) => {
 
                 <h2>Speakers</h2>
                 <ul>
-                    {Object.values(speakers).map(s => <li key={s.email} id={s.email}>
-                        <Profile {...s}/>
-                    </li>)}
+                    {Object.values(speakers).map((s, i) => {
+                         const id = s.email || `speaker-${i}`
+                         return (
+                             <li key={id} id={id}>
+                                 <Profile {...s}/>
+                             </li>
+                         )
+                    })}
                 </ul>
             </div>
         </div>)
