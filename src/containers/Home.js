@@ -23,7 +23,7 @@ export default withSiteData(({conf, events, social, housing, speakers, credits})
           {name: 'Contacto', url: '#contact'},
         ]
       }/>
-      <Intro id="intro"/>
+      <Intro id="intro" place={housing[0]}/>
       <Schedule events={events} id="schedule"/>
       <Registration id="registration"/>
       <Speakers speakers={speakers} id="speakers"/>

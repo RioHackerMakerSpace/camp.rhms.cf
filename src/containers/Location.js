@@ -1,15 +1,8 @@
 import React from 'react'
 import Attribution from './Attribution'
+import Place from './Place'
 
 import './location.css'
-
-const Place = ({name, url, addr}) => (
-    <div className="venue">
-        <p><span><a href={url} target="blank">{name}</a></span></p>
-        <p>{addr}</p>
-        <p>Paty do Alferes - RJ</p>
-    </div>
-)
 
 const Location = ({place: {image, location, city, state, country, description}, housing}) => (
     <div className="location section" style={{
